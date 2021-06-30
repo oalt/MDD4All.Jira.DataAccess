@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>MDD4All.Jira.DataAccess</AssemblyName>
+    <RootNamespace>MDD4All.Jira.DataAccess</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\MDD4All.Jira.DataModels\src\MDD4All.Jira.DataModels\MDD4All.Jira.DataModels.csproj" />
+  </ItemGroup>
+
+</Project>

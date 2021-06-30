@@ -119,5 +119,40 @@ namespace MDD4All.Jira.DataAccess
             return result;
         }
 
+
+        public async Task<Issue> CreateJiraIssueAsync(Issue issue)
+        {
+            Issue result = null;
+
+            try
+            {
+                string json = JsonConvert.SerializeObject(issue, new JsonSerializerSettings
+                {
+                    NullValueHandling = NullValueHandling.Ignore
+                });
+
+                StringContent data = new StringContent(json, Encoding.UTF8, "application/json");
+
+                HttpResponseMessage response = await _httpClient.PostAsync(_url + "/rest/api/2/issue", data);
+
+                string jiraResult = response.Content.ReadAsStringAsync().Result;
+
+                if (response.StatusCode == System.Net.HttpStatusCode.OK || response.StatusCode == System.Net.HttpStatusCode.Created)
+                {
+                    result = JsonConvert.DeserializeObject<Issue>(jiraResult);
+                }
+                else
+                {
+                    result = null;
+                }
+            }
+            catch (Exception exception)
+            {
+                Debug.WriteLine(exception);
+            }
+
+            return result;
+        }
+
     }
 }

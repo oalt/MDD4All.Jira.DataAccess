@@ -8,6 +8,8 @@
     <Copyright>(c) MDD4All.de</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>MDD4All Jira DataAccess</PackageTags>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>MDD4All_Github.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>

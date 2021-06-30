@@ -39,11 +39,18 @@ namespace MDD4All.Jira.DataAccess
             _httpClient.DefaultRequestHeaders.Add("Authorization", authenticationHeaderValue.ToString());
         }
 
-        public async Task<string> GetJiraIssueAsync(string issueID)
+        public async Task<Jira3.Issue> GetJiraIssueAsync(string issueID)
         {
-            string response = await _httpClient.GetStringAsync(_url + "/rest/api/3/issue/" + issueID + "?expand=names,changelog");
+            Jira3.Issue result = null;
 
-            return response;
+            string json = await _httpClient.GetStringAsync(_url + "/rest/api/3/issue/" + issueID + "?expand=names,changelog");
+
+            if(json != null)
+            {
+                result = JsonConvert.DeserializeObject<Jira3.Issue>(json);
+            }
+
+            return result;
         }
 
         public async Task<IssueSearchResponse> GetIssuesByJQL(string jql)

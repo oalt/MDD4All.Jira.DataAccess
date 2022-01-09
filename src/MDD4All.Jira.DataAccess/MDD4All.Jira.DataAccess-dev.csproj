@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\MDD4All.Jira.DataModels\src\MDD4All.Jira.DataModels\MDD4All.Jira.DataModels.csproj" />
+    <ProjectReference Include="..\..\..\MDD4All.Jira.DataModels\src\MDD4All.Jira.DataModels\MDD4All.Jira.DataModels-dev.csproj" />
   </ItemGroup>
 
 </Project>

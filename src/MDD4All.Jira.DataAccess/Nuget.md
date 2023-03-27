@@ -1,0 +1,1 @@
+﻿REST Data Access (JiraRestClient) implementation for Atlassian Jira. 

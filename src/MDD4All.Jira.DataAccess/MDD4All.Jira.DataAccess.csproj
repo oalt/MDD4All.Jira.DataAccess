@@ -10,10 +10,18 @@
     <PackageTags>MDD4All Jira DataAccess</PackageTags>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>MDD4All_Github.snk</AssemblyOriginatorKeyFile>
+    <PackageReadmeFile>Nuget.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="MDD4All.Jira.DataModels" Version="3.0.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Nuget.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
